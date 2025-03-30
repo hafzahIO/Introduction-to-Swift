@@ -10,7 +10,7 @@ struct Creature {
 
   // Part 2: Fibonacci Creature Abilities
   var ability: String {
-    "\(name) has a magic power strength of \(magicPower) points, which translates into \(fibonacciAbility(number: magicPower)) points of special ability."
+    "a magic power strength of \(magicPower) points which translates into \(fibonacciAbility(number: magicPower)) points of special ability."
   }
   
   // Part 2: Fibonacci Creature Abilities
@@ -31,12 +31,24 @@ struct Creature {
 }
 
 
-var astralHorn = Creature(name: "Astral Horn", description: "A unicorn", isGood: true, magicPower: 9)
-var infernoDrake = Creature(name: "Inferno Drake", description: "A dragon", isGood: false, magicPower: 8)
-var emberSoul = Creature(name: "Ember Soul", description: "A phoenix", isGood: true, magicPower: 6)
+var astralHorn = Creature(name: "Astral Horn", description: "unicorn", isGood: true, magicPower: 9)
+var infernoDrake = Creature(name: "Inferno Drake", description: "dragon", isGood: false, magicPower: 8)
+var emberSoul = Creature(name: "Ember Soul", description: "phoenix", isGood: true, magicPower: 6)
 
 astralHorn.ability
 infernoDrake.ability
 emberSoul.ability
 
+// Part 3: The Mythical Creature
+var creatureCatalog: [Creature] = []
+creatureCatalog.append(astralHorn)
+creatureCatalog.append(infernoDrake)
+creatureCatalog.append(emberSoul)
 
+func describeCreature(creatureArray: [Creature]) {
+  for creature in creatureArray {
+    print("\(creature.name) is a \(creature.description) and has \(creature.ability)")
+  }
+}
+
+describeCreature(creatureArray: creatureCatalog)
